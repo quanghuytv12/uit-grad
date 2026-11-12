@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Đường tới Hội trường A · UIT</title>
+<meta name="description" content="Bản đồ khuôn viên UIT có định vị — Lễ tốt nghiệp Trần Quang Huy, 25.11.2026, 10:00–12:00">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;800&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+  :root{
+    --bg:#0A1A3F; --card:#0F2350; --line:#23407A; --text:#F5F8FF; --muted:#AFC0DD;
+    --coral:#F1774B; --gold:#D4A84A; --green:#2FBF71;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--text);font-family:'Be Vietnam Pro',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  main{max-width:560px;margin:0 auto;padding:20px 16px 40px;display:flex;flex-direction:column;gap:16px}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.1em;color:var(--green);margin:0}
+  h1{margin:4px 0 0;font-size:28px;line-height:1.2;font-weight:800}
+  h1 span{color:var(--coral)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .chip{font-size:14px;padding:6px 12px;border-radius:999px;background:var(--card);border:1px solid var(--line);color:var(--muted)}
+  .chip b{color:var(--text);font-weight:700}
+  .banner{display:none;padding:12px 14px;border-radius:12px;background:#3A2A10;border:1px solid var(--gold);font-size:15px;line-height:1.45}
+  .banner.show{display:block}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .map-wrap{position:relative;background:#0C1E46}
+  .map-wrap svg{display:block;width:100%;height:auto}
+  .controls{display:flex;flex-direction:column;gap:10px;padding:14px}
+  button,.btn{appearance:none;border:0;border-radius:12px;min-height:48px;padding:12px 16px;font:700 16px 'Be Vietnam Pro',sans-serif;cursor:pointer;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:8px}
+  .primary{background:var(--coral);color:#1A0E08}
+  .primary:active{filter:brightness(.92)}
+  .secondary{background:transparent;color:var(--text);border:1px solid var(--line)}
+  .status{font-size:14px;color:var(--muted);min-height:20px;margin:0;text-align:center}
+  .status.err{color:#FFB199}
+  ol{margin:0;padding:16px 16px 16px 44px;display:flex;flex-direction:column;gap:12px;font-size:16px;line-height:1.5}
+  ol li::marker{color:var(--coral);font-weight:800}
+  ol b{color:var(--text)}
+  ol span{color:var(--muted)}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .legend{display:flex;flex-wrap:wrap;gap:14px;padding:10px 14px 0;font-size:13px;color:var(--muted)}
+  .legend i{display:inline-block;width:14px;height:14px;border-radius:4px;vertical-align:-2px;margin-right:6px}
+  footer{font-size:13px;color:var(--muted);text-align:center;line-height:1.5}
+  @keyframes pulse{0%{r:16;opacity:.6}100%{r:52;opacity:0}}
+  .pulse{animation:pulse 1.8s ease-out infinite}
+  @keyframes dash{to{stroke-dashoffset:-28}}
+  .route{animation:dash 1.2s linear infinite}
+  @media (prefers-reduced-motion:reduce){.pulse,.route{animation:none}}
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <p class="eyebrow">// LỄ TỐT NGHIỆP · TRẦN QUANG HUY</p>
+    <h1>Đường tới <span>Hội trường A</span></h1>
+    <div class="chips">
+      <span class="chip"><b>Thứ Tư, 25.11.2026</b></span>
+      <span class="chip"><b>10:00 – 12:00</b></span>
+      <span class="chip">ĐH Công nghệ Thông tin · ĐHQG-HCM</span>
+    </div>
+  </header>
+
+  <div class="banner" id="iab" role="note">
+    Bạn đang mở trong ứng dụng chat nên có thể không định vị được.
+    Bấm <b>⋯</b> (góc trên) → <b>Mở bằng trình duyệt</b> để thấy vị trí của bạn trên bản đồ.
+  </div>
+
+  <section class="card" aria-label="Bản đồ khuôn viên">
+    <div class="map-wrap">
+      <svg id="map" viewBox="130 680 960 1150" role="img" aria-label="Sơ đồ khuôn viên UIT, hướng Bắc ở trên: Cổng A bên trái trên đường Hàn Thuyên, nhà xe dọc đường Hàn Thuyên, Tòa A ở giữa, Cổng B ở góc dưới bên phải.">
+        <!-- Han Thuyen street -->
+        <path d="M500 680 L488 760 Q470 850 400 920 L330 990 Q250 1070 130 1200" fill="none" stroke="#2B4370" stroke-width="44" stroke-linecap="round"/>
+        <text x="372" y="902" transform="rotate(-48 372 902)" font-family="Be Vietnam Pro, sans-serif" font-size="24" font-weight="700" fill="#AFC0DD" text-anchor="middle">Đường Hàn Thuyên</text>
+        <!-- campus ground -->
+        <path d="M262 1180 L360 1010 L470 870 L530 730 L660 712 L1130 1060 L1060 1470 L965 1735 L880 1770 L310 1630 L250 1460 Z" fill="#133070"/>
+        <!-- internal roads -->
+        <g fill="none" stroke="#3A5A8C" stroke-width="24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M232 1184 L650 800 L652 1238 L880 1238 Q1000 1240 1025 1320 L1028 1430 Q1020 1478 940 1488 Q890 1495 886 1540 L884 1600"/>
+          <path d="M240 1196 L316 1272 L320 1510 Q324 1585 400 1588 L860 1596 Q900 1600 910 1650 L922 1712"/>
+        </g>
+        <!-- buildings -->
+        <g fill="#1E3F86" stroke="#7F9AD0" stroke-width="2.5">
+          <path d="M760 1325 Q800 1262 880 1258 Q975 1262 1000 1400" fill="none" stroke="#1E3F86" stroke-width="38" stroke-linecap="butt"/>
+          <path d="M428 1484 L808 1484 L808 1576 L428 1576 Z"/>
+          <path d="M346 1388 L488 1388 L488 1462 L346 1462 Z"/>
+          <path d="M902 1494 L982 1494 L982 1574 L902 1574 Z"/>
+          <path d="M835 1730 L878 1770 L835 1810 L792 1770 Z"/>
+        </g>
+        <!-- parking shed along Han Thuyen -->
+        <path d="M398 958 L590 762 L630 800 L438 996 Z" fill="#2A3F6E" stroke="#AFC0DD" stroke-width="2.5" stroke-dasharray="8 6"/>
+        <!-- Toa A (destination): library + main hall -->
+        <circle cx="545" cy="1170" r="150" fill="#F1774B" opacity=".10"/>
+        <path d="M552 1022 L605 1022 L632 1050 L632 1110 L620 1112 L600 1112 L600 1260 L565 1298 L488 1298 L450 1260 L450 1150 L488 1112 L525 1112 L525 1050 Z" fill="#D4A84A" stroke="#F5F8FF" stroke-width="3"/>
+        <!-- route: gate A -> parking (vehicle) -->
+        <path class="route" d="M200 1170 L232 1184 L470 965" fill="none" stroke="#F1774B" stroke-width="9" stroke-linecap="round" stroke-dasharray="24 22"/>
+        <!-- route: parking -> Toa A (walk) -->
+        <path class="route" d="M470 965 L540 1035" fill="none" stroke="#F5F8FF" stroke-width="7" stroke-linecap="round" stroke-dasharray="6 16"/>
+        <!-- labels -->
+        <g font-family="Be Vietnam Pro, sans-serif" font-weight="700" text-anchor="middle" fill="#F5F8FF" paint-order="stroke" stroke="#0A1A3F" stroke-width="7" stroke-linejoin="round">
+          <text x="880" y="1300" font-size="30">Nhà B</text>
+          <text x="618" y="1540" font-size="32">Nhà C</text>
+          <text x="417" y="1436" font-size="28">Nhà E</text>
+          <text x="942" y="1630" font-size="24">Căn tin</text>
+          <text x="730" y="1780" font-size="28">Nhà D</text>
+          <text x="514" y="884" font-size="26" transform="rotate(-45 514 884)">Nhà xe</text>
+          <text x="566" y="1080" font-size="20" fill="#0A1A3F" stroke="#D4A84A">Thư viện</text>
+          <text x="525" y="1200" font-size="34" fill="#0A1A3F" stroke="#D4A84A">NHÀ A</text>
+          <text x="525" y="1236" font-size="22" fill="#0A1A3F" stroke="#D4A84A">Hội trường A</text>
+        </g>
+        <!-- gates -->
+        <g font-family="Be Vietnam Pro, sans-serif" font-weight="800" font-size="26" text-anchor="middle">
+          <rect x="150" y="1196" width="116" height="42" rx="21" fill="#2FBF71"/>
+          <text x="208" y="1226" fill="#0A1A3F">Cổng A</text>
+          <rect x="930" y="1700" width="116" height="42" rx="21" fill="#3A5A8C"/>
+          <text x="988" y="1730" fill="#F5F8FF">Cổng B</text>
+        </g>
+        <!-- north arrow -->
+        <g transform="translate(1040 740)" font-family="Be Vietnam Pro, sans-serif" font-weight="800" text-anchor="middle">
+          <path d="M0 -26 L14 12 L0 4 L-14 12 Z" fill="#F5F8FF"/>
+          <text x="0" y="40" font-size="22" fill="#AFC0DD">B</text>
+        </g>
+        <!-- you-are-here (hidden until located) -->
+        <g id="me" style="display:none">
+          <circle id="acc" cx="0" cy="0" r="40" fill="#F1774B" opacity=".15" stroke="#F1774B" stroke-opacity=".5" stroke-width="2"/>
+          <circle class="pulse" cx="0" cy="0" r="16" fill="#F1774B"/>
+          <circle cx="0" cy="0" r="16" fill="#F1774B" stroke="#FFFFFF" stroke-width="5"/>
+          <g transform="translate(0 -44)">
+            <rect x="-68" y="-26" width="136" height="38" rx="19" fill="#FFFFFF"/>
+            <text x="0" y="0" text-anchor="middle" font-family="Be Vietnam Pro, sans-serif" font-size="22" font-weight="800" fill="#0A1A3F">Bạn ở đây</text>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <div class="legend" aria-hidden="true">
+      <span><i style="background:#F1774B"></i>Đường xe vào</span>
+      <span><i style="background:#F5F8FF"></i>Đi bộ</span>
+      <span><i style="background:#D4A84A"></i>Nơi làm lễ</span>
+    </div>
+    <div class="controls">
+      <button class="primary" id="locate" type="button">Bật định vị — xem tôi đang ở đâu</button>
+      <p class="status" id="status" aria-live="polite">Bấm nút trên, rồi chọn “Cho phép” khi điện thoại hỏi.</p>
+    </div>
+  </section>
+
+  <section class="card" aria-label="Hướng dẫn đường đi">
+    <ol>
+      <li><b>Vào Cổng A</b> <span>— cổng nằm trên đường Hàn Thuyên (bên trái bản đồ).</span></li>
+      <li><b>Rẽ trái ngay sau cổng</b> <span>— chạy theo đường chéo, nhà xe nằm dọc bên trái, sát đường Hàn Thuyên.</span></li>
+      <li><b>Gửi xe, đi bộ sang Nhà A</b> <span>— băng qua đường là tới tòa màu vàng (phía trên là Thư viện). Nhà A có nhiều lối vào, đi lối nào cũng được.</span></li>
+    </ol>
+  </section>
+
+  <div class="row">
+    <a class="btn secondary" href="https://www.google.com/maps/dir/?api=1&destination=10.870431074132124,106.80211885592566" target="_blank" rel="noopener">Chỉ đường tới Cổng A</a>
+    <a class="btn secondary" href="tel:0587656015" id="call">Gọi tui · 0587 656 015</a>
+  </div>
+
+  <footer>Vị trí trên bản đồ có thể lệch vài mét.<br>Lạc đường thì cứ gọi tui nhé.</footer>
+</main>
+
+<script>
+(function(){
+  // Control points: [lat, lng] -> [x, y] in the SVG's coordinate space
+  var CP = [
+    {lat:10.870431074132124, lng:106.80211885592566, x:228, y:1180},   // Cổng A
+    {lat:10.86903134979048,  lng:106.80399793183433, x:920, y:1712},   // Cổng B
+    {lat:10.870191204491846, lng:106.80281537536791, x:485.5, y:1272.5} // Tòa A
+  ];
+  var LAT0 = CP[2].lat, LNG0 = CP[2].lng, PX_PER_M = 3.39;
+  function solve3(m, b){ // Cramer's rule
+    function det(a){return a[0][0]*(a[1][1]*a[2][2]-a[1][2]*a[2][1])-a[0][1]*(a[1][0]*a[2][2]-a[1][2]*a[2][0])+a[0][2]*(a[1][0]*a[2][1]-a[1][1]*a[2][0]);}
+    var D = det(m), out = [];
+    for (var c=0;c<3;c++){ var mc = m.map(function(r,i){ var rr=r.slice(); rr[c]=b[i]; return rr; }); out.push(det(mc)/D); }
+    return out;
+  }
+  var M = CP.map(function(p){ return [(p.lat-LAT0)*1e5, (p.lng-LNG0)*1e5, 1]; });
+  var AX = solve3(M, CP.map(function(p){return p.x;}));
+  var AY = solve3(M, CP.map(function(p){return p.y;}));
+  function project(lat, lng){
+    var u=(lat-LAT0)*1e5, v=(lng-LNG0)*1e5;
+    return {x:AX[0]*u+AX[1]*v+AX[2], y:AY[0]*u+AY[1]*v+AY[2]};
+  }
+
+  var ua = navigator.userAgent || '';
+  if (/Zalo|FBAN|FBAV|FB_IAB|Messenger|Instagram|Line\//i.test(ua)) document.getElementById('iab').classList.add('show');
+
+  var btn = document.getElementById('locate'), status = document.getElementById('status');
+  var me = document.getElementById('me'), acc = document.getElementById('acc');
+  var watching = null;
+  function say(t, err){ status.textContent = t; status.className = 'status' + (err ? ' err' : ''); }
+
+  btn.addEventListener('click', function(){
+    if (!('geolocation' in navigator)) { say('Trình duyệt này không hỗ trợ định vị. Bạn cứ xem bản đồ và làm theo hướng dẫn bên dưới nhé.', true); return; }
+    if (watching !== null) return;
+    say('Đang tìm vị trí của bạn…');
+    watching = navigator.geolocation.watchPosition(function(pos){
+      var p = project(pos.coords.latitude, pos.coords.longitude);
+      var inside = p.x > 130 && p.x < 1090 && p.y > 680 && p.y < 1830;
+      if (!inside){
+        me.style.display = 'none';
+        say('Bạn đang ở ngoài khuôn viên trường. Bấm “Chỉ đường tới Cổng A” để Google Maps dẫn đường.');
+        return;
+      }
+      me.setAttribute('transform', 'translate(' + p.x.toFixed(1) + ' ' + p.y.toFixed(1) + ')');
+      acc.setAttribute('r', Math.min(240, Math.max(20, pos.coords.accuracy * PX_PER_M)).toFixed(1));
+      me.style.display = '';
+      btn.textContent = 'Đang theo dõi vị trí của bạn';
+      say('Đã định vị (sai số khoảng ' + Math.round(pos.coords.accuracy) + ' m). Đi theo đường màu cam nhé!');
+    }, function(e){
+      watching = null;
+      if (e.code === 1) say('Bạn chưa cho phép định vị. Bản đồ vẫn dùng được — cứ đi theo hướng dẫn bên dưới nhé.', true);
+      else if (e.code === 3) say('Định vị lâu quá. Thử ra chỗ thoáng rồi bấm lại nhé.', true);
+      else say('Chưa lấy được vị trí. Kiểm tra GPS đã bật chưa rồi bấm lại nhé.', true);
+    }, {enableHighAccuracy:true, maximumAge:5000, timeout:20000});
+  });
+})();
+</script>
+</body>
+</html>
